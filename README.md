@@ -18,7 +18,13 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
 
 **2.Where do we get this PIP Tool?** 
 
-And how to configure it in our Local Machines
+Included with Python Installations: In most cases, when you install Python (versions 2.7.9+ or 3.4+), 
+pip is automatically included and installed alongside it. This is the most common and recommended method for acquiring pip.
+
+Separate Installation on Some Linux Systems: On certain Linux distributions like Ubuntu, pip might be packaged separately as python3-pip.
+In such cases, you would install it using your system's package manager, for example:
+
+sudo apt install python3-pip
 
 **3.Installing Selenium**
 
