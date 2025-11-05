@@ -39,3 +39,7 @@ This command will set up the Selenium WebDriver client library on your machine w
 **pip install -U selenium**
 
 The optional –U flag will upgrade the existing version of the installed package
+
+**5. Python Library to read/write excel files**
+
+**pip install openpyxl**
