@@ -43,3 +43,65 @@ The optional –U flag will upgrade the existing version of the installed packag
 **5. Python Library to read/write excel files**
 
 **pip install openpyxl**
+
+# Pytest
+
+**6. Install Pytest and Configuration**
+
+**pip install pytest**
+
+**Configure/Run Pytest in PyCharm**
+- Select Edit Configurations (Run>Edit Configurations…)
+- Select Add New Configuration ('+' button)
+- Select pytest option from Python tests
+- Clicks on Apply and OK button
+- Once pytest run configuration appears on navigation bar, 
+clicks on dropdown and select Edit Configuration 
+- From Target options checks Scripts path and selects the path for your test
+- Select Apply and OK 
+- Once pytest configuration appears in Navigation bar click on Run button to execute the test
+**Run Pytest in Terminal**
+  - From terminal navigate to the path where pytest are located example: 
+  cd /Users/gilberto.barraza/Desktop/Repo_Cursos/Selenium_WebDriver_Python/PytestDemo
+
+**7. Pytest execution commands**
+  
+  **py.test** # execute all pytest from path folder
+  
+  **py.test [test_name.py]** # execute file given file (example: py.test test_demo1.py)
+  
+  **py.test -v** # -v print executed methods on tests from path folder
+  
+  **py.test -v -s** # -s print console logs
+
+  **py.test -k [text]** # -k [text] find and run test methods from actual folder which contains the given text
+  (example: py.test -k CreditCard)
+
+  **Using tags**
+
+  **py.test -m [tag]** # -m [mark] This will run all the tests which contains the mark/tag from actual folder
+  - (example: py.test -m smoke) executes the tests with 'smoke' mark which belongs to method test_secondGreetCreditCard
+  
+  @pytest.mark.smoke 
+  
+  def test_secondGreetCreditCard():
+  
+  - If a method contains skip mark, test won't be executed and will be reported as skipped on results
+  
+  @pytest.mark.smoke
+
+  @pytest.mark.skip
+  
+  def test_firstProgram():
+  
+  - If a method contain xfail mark, It means a test will be executed but not reported as fail it will 
+  be reported as XPASS instead, You can add xfail tag when need to run a test even you know it fails or 
+  has a dependency where need to run a particular test for further tests
+  
+  @pytest.mark.smoke
+
+  @pytest.mark.xfail
+  
+  def test_firstProgram():
+
+ 
