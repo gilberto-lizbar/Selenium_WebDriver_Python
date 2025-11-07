@@ -14,3 +14,12 @@ def test_firstProgram():
 @pytest.mark.xfail
 def test_secondProgram():
     print("Good Morning")
+
+
+def test_crossBrowser(crossBrowser):
+    print(crossBrowser)
+
+
+def test_crossBrowser2(crossBrowser2):
+    print(crossBrowser2[0])
+

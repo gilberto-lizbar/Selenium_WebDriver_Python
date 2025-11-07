@@ -1,5 +1,6 @@
 import pytest
 
+
 # conftest will be available for all the tests in folder which names follows name convention
 # test_name, instead add the fixture method in the tests file and then call it in method
 # Fixture is declared one time in conftest.py, any method which receive as argument the fixture
@@ -19,3 +20,17 @@ def setup():
     print("executed last")
 
 
+@pytest.fixture()
+def dataLoad():
+    print("user profile data is being created")
+    return ["Gilberto", "Lizarraga", "gilberto.lizbar@gmail.com"]
+
+
+@pytest.fixture(params=["chrome", "Firefox", "IE"])
+def crossBrowser(request):  # Use request when you have fixtures with some params available
+    return request.param
+
+
+@pytest.fixture(params=[("Chrome", "CH"), ("Firefox", "FF"), ("Internet Explorer", "IE")])
+def crossBrowser2(request):  # Use request when you have fixtures with some params available
+    return request.param
