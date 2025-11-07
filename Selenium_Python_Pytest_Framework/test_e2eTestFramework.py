@@ -10,9 +10,8 @@ chrome_options.add_argument("--start-maximized")  # start browser maximized
 chrome_options.add_argument("--ignore-certificate-error")
 
 
-def test_e2e():
-    driver = webdriver.Chrome()
-    driver.implicitly_wait(5)
+def test_e2e(browserInstance):
+    driver = browserInstance  # Calling driver from browserInstance fixture
     driver.get("https://rahulshettyacademy.com/angularpractice")
     driver.maximize_window()
     wait = WebDriverWait(driver, 10)
@@ -23,11 +22,10 @@ def test_e2e():
 
     wait.until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[@class='card-body']")))
 
-    action.scroll_to_element(driver.find_element(By.CSS_SELECTOR, ".py-5"))
     products = driver.find_elements(By.XPATH, "//div[@class='card h-100']")
     product_names = []
 
-    action.scroll_to_element(driver.find_element(By.CSS_SELECTOR, ".py-5")).perform()
+    #action.scroll_to_element(driver.find_element(By.CSS_SELECTOR, ".py-5")).perform()
 
     for product in products:
         prod_txt = product.find_element(By.XPATH, "div/h4/a").text
