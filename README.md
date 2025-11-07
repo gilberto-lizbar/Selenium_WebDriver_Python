@@ -104,4 +104,9 @@ clicks on dropdown and select Edit Configuration
   
   def test_firstProgram():
 
- 
+ # Reports
+
+**8. Install Pytest html reports**
+
+    pip install pytest-html
+
