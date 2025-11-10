@@ -18,4 +18,5 @@ def browserInstance(request):
     elif browser_name == "Firefox":
         driver = webdriver.Firefox()
         driver.implicitly_wait(5)
-    yield driver  # return driver
+    yield driver  # Before test function execution, return driver
+    driver.close()  # After your test function execution
