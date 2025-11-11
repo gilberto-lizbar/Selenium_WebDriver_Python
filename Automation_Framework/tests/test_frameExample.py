@@ -1,9 +1,5 @@
 import json
-import os.path
-import sys
 from pathlib import Path
-
-#sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import pytest
 
@@ -21,6 +17,7 @@ with open(test_data_path) as f:
     test_list = test_data["data"]  # Storing in a list all content of 'data' key from json
 
 
+@pytest.mark.smoke
 @pytest.mark.parametrize("test_list_item", test_list)  # Extract test_list and attached to test_list_item
 # Send test_list_item as an argument of test method to have access to test_list_item data
 def test_frameExample1(browserInstance, test_list_item):

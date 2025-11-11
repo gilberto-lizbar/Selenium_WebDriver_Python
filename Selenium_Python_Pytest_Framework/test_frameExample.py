@@ -4,7 +4,7 @@ import sys
 
 import pytest
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+#sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from Selenium_Python_Pytest_Framework.pageObjects.login import LoginPage
 
@@ -14,6 +14,7 @@ with open(test_data_path) as f:
     test_list = test_data["data"]  # Storing in a list all content of 'data' key from json
 
 
+@pytest.mark.smoke
 @pytest.mark.parametrize("test_list_item", test_list)  # Extract test_list and attached to test_list_item
 # Send test_list_item as an argument of test method to have access to test_list_item data
 def test_frameExample1(browserInstance, test_list_item):
@@ -37,3 +38,15 @@ def test_frameExample1(browserInstance, test_list_item):
     # checkout_confirmationPage.enter_delivery_address("Slovenia")
     checkout_confirmationPage.enter_delivery_address(test_list_item["country"])
     checkout_confirmationPage.validate_order()
+
+
+@pytest.mark.smoke
+@pytest.mark.parametrize("test_list_item", test_list)  # Extract test_list and attached to test_list_item
+def test_frameExample2(browserInstance, test_list_item):
+    print(f"This test is just run as an example getting values from json files"
+          f"{test_list_item["userEmail"]}, {test_list_item["userPassword"]},{test_list_item["country"]}")
+
+
+@pytest.mark.smoke
+def test_frameExample3():
+    print("Adding test3 only for testing results")
