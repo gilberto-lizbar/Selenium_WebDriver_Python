@@ -1,0 +1,14 @@
+{
+  "data" : [
+    {
+      "userEmail": "rahulshettyacademy",
+      "userPassword": "learning",
+      "country": "Slovenia"
+    },
+    {
+      "userEmail": "rahulshettyacademy",
+      "userPassword": "learning",
+      "country": "Indonesia"
+    }
+  ]
+}

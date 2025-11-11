@@ -1,6 +1,9 @@
 from selenium.webdriver.common.by import By
 
-from Selenium_Python_Pytest_Framework.pageObjects.shop import ShopPage
+from Automation_Framework.pageObjects.shop import ShopPage
+
+
+#from Selenium_Python_Pytest_Framework.pageObjects.shop import ShopPage
 
 
 class LoginPage:

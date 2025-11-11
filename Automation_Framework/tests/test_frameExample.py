@@ -1,14 +1,21 @@
 import json
 import os.path
 import sys
+from pathlib import Path
+
+#sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import pytest
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from Automation_Framework.pageObjects.login import LoginPage
 
-from Selenium_Python_Pytest_Framework.pageObjects.login import LoginPage
+#test_data_path = '../data/test_frameExample.json'
+# Get the absolute path to the data file
+current_dir = Path(__file__).resolve().parent  # tests directory
+project_root = current_dir.parent  # Automation_Framework directory
+test_data_path = project_root / 'data' / 'test_frameExample.json'
 
-test_data_path = 'data/test_frameExample.json'
+
 with open(test_data_path) as f:
     test_data = json.load(f)
     test_list = test_data["data"]  # Storing in a list all content of 'data' key from json
