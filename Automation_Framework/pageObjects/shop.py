@@ -3,13 +3,15 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
 from Automation_Framework.pageObjects.checkout_confirmation import CheckoutConfirmation
+from Automation_Framework.utils.browserutils import BrowserUtils
 
 
 #from Selenium_Python_Pytest_Framework.pageObjects.checkout_confirmation import CheckoutConfirmation
 
 
-class ShopPage:
+class ShopPage(BrowserUtils):
     def __init__(self, driver):
+        super().__init__(driver)
         self.driver = driver
         self.wait = WebDriverWait(driver, 10)
         self.shop_link = (By.LINK_TEXT, "Shop")

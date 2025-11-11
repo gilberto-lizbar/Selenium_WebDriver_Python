@@ -22,6 +22,7 @@ def test_frameExample1(browserInstance, test_list_item):
 
     # Create an object from LoginPage class to have access to class methods
     loginPage = LoginPage(driver)
+    print(loginPage.getTitle())
     # loginPage.login()
     # shopPage = ShopPage(driver)
     # shopPage = loginPage.login()  # Two lines above were changed by this line making login method

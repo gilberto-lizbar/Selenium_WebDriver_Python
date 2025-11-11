@@ -2,10 +2,13 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
+from Automation_Framework.utils.browserutils import BrowserUtils
 
-class CheckoutConfirmation:
+
+class CheckoutConfirmation(BrowserUtils):
 
     def __init__(self, driver):
+        super().__init__(driver)
         self.country_option = None
         self.driver = driver
         self.wait = WebDriverWait(driver, 10)

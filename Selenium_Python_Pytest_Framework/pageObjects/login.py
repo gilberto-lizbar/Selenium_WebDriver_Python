@@ -1,14 +1,17 @@
 from selenium.webdriver.common.by import By
 
 from Selenium_Python_Pytest_Framework.pageObjects.shop import ShopPage
+from Selenium_Python_Pytest_Framework.utils.browserutils import BrowserUtils
 
 
-class LoginPage:
+class LoginPage(BrowserUtils):
 
     # Declare locators in constructor and attach to 'self' to access anywhere in the class,
     # self allows methods to access and modify the attributes (variables) that belong to a +
     # specific instance of the class.
     def __init__(self, driver):  # Add driver as an argument of constructor to force whoever
+        # initialize parent class with driver activated
+        super().__init__(driver)
         # call page class to activate the driver
         self.driver = driver
         self.username_input = (By.ID, "username")  # packaging tuple
