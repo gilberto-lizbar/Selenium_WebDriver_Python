@@ -110,3 +110,8 @@ clicks on dropdown and select Edit Configuration
 
     pip install pytest-html
 
+ # Parallel Mode pytest-xdist Installation
+
+  pip install pytest-xdist
+  pytest -n 10
+

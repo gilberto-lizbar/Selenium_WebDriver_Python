@@ -5,12 +5,11 @@ import pytest
 
 from Automation_Framework.pageObjects.login import LoginPage
 
-#test_data_path = '../data/test_frameExample.json'
+# test_data_path = '../data/test_frameExample.json'
 # Get the absolute path to the data file
 current_dir = Path(__file__).resolve().parent  # tests directory
 project_root = current_dir.parent  # Automation_Framework directory
 test_data_path = project_root / 'data' / 'test_frameExample.json'
-
 
 with open(test_data_path) as f:
     test_data = json.load(f)
@@ -42,3 +41,15 @@ def test_frameExample1(browserInstance, test_list_item):
     # checkout_confirmationPage.enter_delivery_address("Slovenia")
     checkout_confirmationPage.enter_delivery_address(test_list_item["country"])
     checkout_confirmationPage.validate_order()
+
+
+@pytest.mark.smoke
+@pytest.mark.parametrize("test_list_item", test_list)  # Extract test_list and attached to test_list_item
+def test_frameExample2(browserInstance, test_list_item):
+    print(f"This test is just run as an example getting values from json files"
+          f"{test_list_item["userEmail"]}, {test_list_item["userPassword"]},{test_list_item["country"]}")
+
+
+@pytest.mark.smoke
+def test_frameExample3():
+    print("Adding test3 only for testing results")
