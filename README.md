@@ -113,5 +113,13 @@ clicks on dropdown and select Edit Configuration
  # Parallel Mode pytest-xdist Installation
 
   pip install pytest-xdist
-  pytest -n 10
+
+  
+# Parallel Mode pytest- Execution commands
+
+  pytest -n 10  # To specify a specific number of parallel processes (e.g., 4 processes)
+
+  py.test -n 2 tests -m smoke -v -s --browser_name Chrome
+
+  py.test -n 2 tests/test_frameExample.py --html reports/report.html -v -s # execute pytest from path generating reports
 
